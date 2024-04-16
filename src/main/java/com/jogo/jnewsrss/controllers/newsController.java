@@ -13,12 +13,12 @@ public class newsController {
     private final newsService service;
 
     @GetMapping("/{id}")
-    public ResponseEntity createTodo(@PathVariable Integer id) throws NotFoundException {
+    public ResponseEntity getById(@PathVariable Integer id) throws NotFoundException {
         return service.getById(id);
     }
 
     @GetMapping("/rss")
-    public ResponseEntity createTodo(@RequestParam(defaultValue = "1") int page) throws NotFoundException {
+    public ResponseEntity getRss(@RequestParam(defaultValue = "1") int page) throws NotFoundException {
         return service.getRss(page);
     }
 }
